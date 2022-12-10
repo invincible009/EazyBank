@@ -65,8 +65,8 @@ IN THE SOFTWARE.
   
 ---
 ## Author Info
-  - Twitter - [@jamesqquick](https://twitter.com/jamesqquick)
-  - Website - [James Q Quick](https://jamesquick.com)
+  - Twitter - [@duver_sdl](https://twitter.com/duver_sdl)
+  - Website - [Gabriel Mbaiorga](https://www.sdl.com)
   
 [Back To The Top](#project-name)
   
