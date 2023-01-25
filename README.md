@@ -14,25 +14,22 @@ You're sections headers will be used to reference location of destination.
 
 ---
 ## Description
-When building microservices, the general approach is to take existing monoliths and to decompose their components into microservices.
-Instead of migrating all legacy applications at once, we can allow an organic process of decomposition to drive the birth of new cloud-native applications that
-strangle data away from shared databases used by legacy applications. The cloud-native strangler pattern focuses on the complete replacement of a monolith's 
-database access over a period of time.
-
-In this approach microservices will be transitioned to become the system of record for domain data used by strangled legacy applications.
-The process of performing an on-demand migration of data out of a shared database will require that only one system of record exists at any one time.
-To solve this, a Legacy Edge application acts as an API gateway to allow legacy applications to talk to new microservices.
+Money can possess different forms, at easy bank, money is converted to a form that makes it easy for it to be used on the internet and in person
+like creating a voucher out of the money. Vouchers created at eazybank can be used by customers to make purchase on platforms on the internet, and
+Vouchers can also be collected by money agents for cash.
 
 ### Technologies 
-- Technology 1
-- Technology 2
+- Java 11
 
 ---
 ## How To Use
 
+To use EazyBank. You'll need to have a verified account. Deposit money into the account and convert the money to a voucher amount. 
+If you have a verified account already. You can receive EazyBank voucher into your voucher balance and you can redeem the amount on the voucher. when and where necessary
+The Money get transferred into your account.
 ### Installation
+Log onto the EazyBank app and create an account. 
 
-### API Reference 
 
 ```html
   <p> dummy code </p>
@@ -65,8 +62,8 @@ IN THE SOFTWARE.
   
 ---
 ## Author Info
-  - Twitter - [@jamesqquick](https://twitter.com/jamesqquick)
-  - Website - [James Q Quick](https://jamesquick.com)
+  - Twitter - [Enterprise dev](https://twitter.com/duver_sdl)
+  - LinkedIn - [Gabriel Mbaiorga](https://wwww.linkedin.com/in/gabriel-mbaiorga)
   
 [Back To The Top](#project-name)
   
