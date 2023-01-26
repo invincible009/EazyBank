@@ -12,8 +12,9 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+@Service
 public class EazyBankUsernamePwdAuthenticationProvider implements AuthenticationProvider {
 
   private final CustomerRepository repository;
@@ -30,18 +31,36 @@ public class EazyBankUsernamePwdAuthenticationProvider implements Authentication
   public Authentication authenticate(Authentication authentication) throws AuthenticationException {
     String username = authentication.getName();
     String pwd = authentication.getCredentials().toString();
-    List<Customer> customerList = repository.findByEmail(username);
-    if (customerList.size() > 0) {
-      if (passwordEncoder.matches(pwd, customerList.get(0).getPwd())) {
-        List<GrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority(customerList.get(0).getRole()));
-        return new UsernamePasswordAuthenticationToken(username, pwd, authorities);
+
+    Customer customer = findCustomerByUsername(username);
+
+    if (customer != null) {
+      if (verifyPassword(pwd, customer.getPwd())) {
+        return createAuthenticationToken(username, pwd, customer.getRole());
       } else {
         throw new BadCredentialsException("Invalid Password");
       }
     } else {
       throw new BadCredentialsException("No user registered with this details");
     }
+  }
+
+  private Customer findCustomerByUsername(String username) {
+    List<Customer> customerList = repository.findByEmail(username);
+    if (customerList.size() > 0) {
+      return customerList.get(0);
+    }
+    return null;
+  }
+
+  private boolean verifyPassword(String enteredPwd, String storedPwd) {
+    return passwordEncoder.matches(enteredPwd, storedPwd);
+  }
+
+  private Authentication createAuthenticationToken(String username, String pwd, String role) {
+    List<GrantedAuthority> authorities = new ArrayList<>();
+    authorities.add(new SimpleGrantedAuthority(role));
+    return new UsernamePasswordAuthenticationToken(username, pwd, authorities);
   }
 
   @Override
