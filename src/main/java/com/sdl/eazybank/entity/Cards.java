@@ -4,10 +4,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "cards")
-public class Cards {
-    @Id
-    @Column(name = "card_id")
-    private Integer cardId;
+public class Cards extends BaseEntity{
+
 
     @Column(name = "card_number")
     private String cardNumber;
@@ -30,13 +28,6 @@ public class Cards {
     @Column(name = "create_dt")
     private java.sql.Date createDt;
 
-    public Integer getCardId() {
-        return this.cardId;
-    }
-
-    public void setCardId(Integer cardId) {
-        this.cardId = cardId;
-    }
 
     public String getCardNumber() {
         return this.cardNumber;

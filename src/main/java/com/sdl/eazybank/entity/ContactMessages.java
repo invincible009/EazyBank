@@ -4,10 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "contact_messages")
-public class ContactMessages {
-    @Id
-    @Column(name = "contact_id")
-    private String contactId;
+public class ContactMessages  extends BaseEntity{
 
     @Column(name = "contact_name")
     private String contactName;
@@ -24,13 +21,6 @@ public class ContactMessages {
     @Column(name = "create_dt")
     private java.sql.Date createDt;
 
-    public String getContactId() {
-        return this.contactId;
-    }
-
-    public void setContactId(String contactId) {
-        this.contactId = contactId;
-    }
 
     public String getContactName() {
         return this.contactName;

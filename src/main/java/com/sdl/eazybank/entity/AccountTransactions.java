@@ -4,10 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "account_transactions")
-public class AccountTransactions {
-    @Id
-    @Column(name = "transaction_id")
-    private String transactionId;
+public class AccountTransactions extends BaseEntity{
 
     @Column(name = "account_number")
     private Integer accountNumber;
@@ -32,14 +29,6 @@ public class AccountTransactions {
 
     @Column(name = "create_dt")
     private java.sql.Date createDt;
-
-    public String getTransactionId() {
-        return this.transactionId;
-    }
-
-    public void setTransactionId(String transactionId) {
-        this.transactionId = transactionId;
-    }
 
     public Integer getAccountNumber() {
         return this.accountNumber;

@@ -15,8 +15,8 @@ public class ProjectSecurityConfig {
   public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity httpSecurity)
       throws Exception {
     httpSecurity.authorizeHttpRequests((auth) ->
-            auth.antMatchers("/account", "/balance", "/loans", "/cards").authenticated()
-                .antMatchers("/notices", "/contact")
+            auth.antMatchers("/app/v1/").authenticated()
+                .antMatchers("/api/")
                 .permitAll())
         .httpBasic(Customizer.withDefaults());
     return httpSecurity.build();

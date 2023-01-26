@@ -4,10 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "notice_details")
-public class NoticeDetails {
-    @Id
-    @Column(name = "notice_id")
-    private Integer noticeId;
+public class NoticeDetails extends BaseEntity{
 
     @Column(name = "notice_summary")
     private String noticeSummary;
@@ -26,14 +23,6 @@ public class NoticeDetails {
 
     @Column(name = "update_dt")
     private java.sql.Date updateDt;
-
-    public Integer getNoticeId() {
-        return this.noticeId;
-    }
-
-    public void setNoticeId(Integer noticeId) {
-        this.noticeId = noticeId;
-    }
 
     public String getNoticeSummary() {
         return this.noticeSummary;
