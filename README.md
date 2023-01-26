@@ -4,11 +4,11 @@
 
 ---
 ### Table Of Contents
-You're sections headers will be used to reference location of destination.
+Your sections headers will be used to reference location of destination.
 
 - [Description](#description)
 - [How To Use](#how-to-use)
-- [References](#refrences)
+- [References](#references)
 - [License](#license)
 - [Author Info](#author-info)
 
@@ -24,8 +24,8 @@ The process of performing an on-demand migration of data out of a shared databas
 To solve this, a Legacy Edge application acts as an API gateway to allow legacy applications to talk to new microservices.
 
 ### Technologies 
-- Technology 1
-- Technology 2
+- java 17
+- Liquibase 
 
 ---
 ## How To Use
