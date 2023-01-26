@@ -14,7 +14,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-@Component
 public class EazyBankUsernamePwdAuthenticationProvider implements AuthenticationProvider {
 
   private final CustomerRepository repository;
