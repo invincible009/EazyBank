@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "account_transactions")
-public class AccountTransactions extends BaseEntity{
+public class  AccountTransactions extends BaseEntity{
 
     @Column(name = "account_number")
     private Integer accountNumber;
