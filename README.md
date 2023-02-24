@@ -34,7 +34,7 @@ Log onto the EazyBank app and create an account.
 
 
 ```html
-  <p> dummy code </p>
+  <p> / </p>
 ```
 [Back To The Top](#project-name)
 
