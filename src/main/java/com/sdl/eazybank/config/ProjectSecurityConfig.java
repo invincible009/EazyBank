@@ -1,7 +1,10 @@
 package com.sdl.eazybank.config;
 
+import com.sdl.eazybank.exceptions.BadRequestException;
+import java.security.Principal;
 import java.util.Collections;
-import javax.servlet.http.HttpServletRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -10,11 +13,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
 
 @Configuration
 public class ProjectSecurityConfig {
 
+  private Logger logger = LoggerFactory.getLogger(ProjectSecurityConfig.class);
   @Bean
   public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity httpSecurity)
       throws Exception {
@@ -26,6 +29,11 @@ public class ProjectSecurityConfig {
           configuration.setAllowCredentials(true);
           configuration.setAllowedHeaders(Collections.singletonList("*"));
           configuration.setMaxAge(3600L);
+          try{
+            //Todo if the request is not understood by the system 3 times the disable the user completely
+          }catch (Exception e){
+            throw new BadRequestException("Invalid Url with exception "+ e.getCause());
+          }
           return configuration;
         }).and().csrf().disable()
         .authorizeHttpRequests((auth) ->
