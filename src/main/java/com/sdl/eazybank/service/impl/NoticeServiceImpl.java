@@ -21,7 +21,7 @@ public class NoticeServiceImpl implements NoticeService {
 
     @Override
     public NoticeResponse retrieveAllNotices() {
-
+        Iterable<NoticeDetails> notices = noticeRepository.findAll();
         return "allNotices" == null ? new NoticeResponse() : new NoticeResponse();
     }
 }
