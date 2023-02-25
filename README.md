@@ -21,7 +21,8 @@ Vouchers can also be collected by money agents for cash.
 ### Technologies 
 - Java 11
 - Postgres sql
-- 
+- Spring Security
+- Hibernate
 
 ---
 ## How To Use
@@ -29,6 +30,9 @@ Vouchers can also be collected by money agents for cash.
 To use EazyBank. You'll need to have a verified account. Deposit money into the account and convert the money to a voucher amount. 
 If you have a verified account already. You can receive EazyBank voucher into your voucher balance and you can redeem the amount on the voucher. when and where necessary
 The Money get transferred into your account.
+
+## Frontend
+EazyBank uses an angular frontend
 ### Installation
 Log onto the EazyBank app and create an account. 
 
