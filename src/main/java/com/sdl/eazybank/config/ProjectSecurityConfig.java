@@ -5,7 +5,9 @@ import com.sdl.eazybank.exceptions.BadRequestException;
 import java.security.Principal;
 import java.util.Collections;
 
+import com.sdl.eazybank.filter.AuthoritiesLoggingAfterFilter;
 import com.sdl.eazybank.filter.CsrfFilter;
+import com.sdl.eazybank.filter.RequestValidationFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
@@ -49,8 +51,15 @@ public class ProjectSecurityConfig {
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
                 .and()
                 .addFilterAfter(new CsrfFilter(), BasicAuthenticationFilter.class)
+                .addFilterBefore(new RequestValidationFilter(), BasicAuthenticationFilter.class)
+                .addFilterAfter(new AuthoritiesLoggingAfterFilter(), BasicAuthenticationFilter.class)
                 .authorizeHttpRequests((auth) ->
-                        auth.antMatchers("/app/v1/").authenticated()
+                        auth
+//                                .antMatchers().hasAuthority("")
+//                                .antMatchers().hasAuthority("")
+//                                .antMatchers().hasAuthority("")
+//                                .antMatchers().hasAuthority("")
+                                .antMatchers("/app/v1/").authenticated()
                                 .antMatchers("/api/")
                                 .permitAll())
                 .httpBasic(Customizer.withDefaults());

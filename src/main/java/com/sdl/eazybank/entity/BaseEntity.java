@@ -1,5 +1,7 @@
 package com.sdl.eazybank.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +15,7 @@ public class BaseEntity {
   @Id
   @Column(name = "id")
   @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "native")
-//  @GenericGenerator(name = "native", strategy = "native")
+  @GenericGenerator(name = "native", strategy = "native")
   private Integer id;
 
   public Integer getId() {

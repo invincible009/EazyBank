@@ -6,18 +6,19 @@ import javax.persistence.*;
 @Table(name = "authorities")
 public class Authorities extends BaseEntity{
 
-    @Column(name = "customer_id")
-    private Integer customerId;
-
     @Column(name = "name")
     private String name;
 
-    public Integer getCustomerId() {
-        return this.customerId;
+    @ManyToOne
+    @JoinTable(name = "customer")
+    private Customer customer;
+
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public String getName() {

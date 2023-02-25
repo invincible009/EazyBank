@@ -1,11 +1,13 @@
 package com.sdl.eazybank.config;
 
+import com.sdl.eazybank.entity.Authorities;
 import com.sdl.eazybank.entity.Customer;
 import com.sdl.eazybank.repo.CustomerRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.security.authentication.AbstractUserDetailsReactiveAuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -44,11 +46,19 @@ public class EazyBankUsernamePwdAuthenticationProvider implements Authentication
         Customer customer = findCustomerByUsername(username);
 
         if (verifyPassword(pwd, customer.getPwd())) {
-            return createAuthenticationToken(username, pwd, customer.getRole());
+            return createAuthenticationToken(username, pwd, customer.getAuthorities());
         } else {
             throw new BadCredentialsException("Invalid Password");
         }
 
+    }
+
+    private Authentication createAuthenticationToken(String username, String pwd, Set<Authorities> authorities) {
+        List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
+        for (Authorities auth : authorities) {
+            grantedAuthorities.add(new SimpleGrantedAuthority(auth.getName()));
+        }
+        return new UsernamePasswordAuthenticationToken(username, pwd, grantedAuthorities);
     }
 
     private Customer findCustomerByUsername(String username) {
@@ -63,11 +73,6 @@ public class EazyBankUsernamePwdAuthenticationProvider implements Authentication
         return passwordEncoder.matches(enteredPwd, storedPwd);
     }
 
-    private Authentication createAuthenticationToken(String username, String pwd, String role) {
-        List<GrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority(role));
-        return new UsernamePasswordAuthenticationToken(username, pwd, authorities);
-    }
 
     @Override
     public boolean supports(Class<?> authentication) {

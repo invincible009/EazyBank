@@ -1,11 +1,14 @@
 package com.sdl.eazybank.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "customer")
-public class Customer extends BaseEntity {
-
+public class Customer extends BaseEntity{
 
     @Column(name = "name")
     private String name;
@@ -17,10 +20,23 @@ public class Customer extends BaseEntity {
     private String mobileNumber;
 
     @Column(name = "pwd")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String pwd;
 
     @Column(name = "role")
     private String role;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
+    private Set<Authorities> authorities;
+
+    public Set<Authorities> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(Set<Authorities> authorities) {
+        this.authorities = authorities;
+    }
 
     @Column(name = "create_dt")
     private java.sql.Date createDt;
@@ -72,4 +88,12 @@ public class Customer extends BaseEntity {
     public void setCreateDt(java.sql.Date createDt) {
         this.createDt = createDt;
     }
+
+//    public Integer getId() {
+//        return id;
+//    }
+//
+//    public void setId(Integer id) {
+//        this.id = id;
+//    }
 }
