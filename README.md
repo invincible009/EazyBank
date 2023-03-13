@@ -22,7 +22,6 @@ Vouchers can also be collected by money agents for cash.
 - Java 11
 - Postgres sql
 - Spring Security
-- Hibernate
 
 ---
 ## How To Use
