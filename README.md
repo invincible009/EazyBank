@@ -26,7 +26,7 @@ Vouchers can also be collected by money agents for cash
 ## How To Use
 
 To use EazyBank. You'll need to have a verified account. Deposit money into the account and convert the money to a voucher amount. 
-If you have a verified account already. You can receive EazyBank voucher into your voucher balance and you can redeem the amount on the voucher.
+If you have a verified account already. You can receive EazyBank voucher into your voucher balance and you can redeem the amount on the voucher
 The Money get transferred into your account.
 
 ## Frontend
