@@ -31,7 +31,7 @@ The Money get transferred into your account.
 EazyBank uses an angular frontend
 
 ### Installation
-Log onto the EazyBank app and create an account. 
+Log onto the EazyBank app and create an account
 
 ```html
   <p> / </p>
