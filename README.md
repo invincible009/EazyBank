@@ -1,5 +1,4 @@
 # EazyBank 
-![Project Image](project-image-url)
 > Short Project Blurb
 
 ---
