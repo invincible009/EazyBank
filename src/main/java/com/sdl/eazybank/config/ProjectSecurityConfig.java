@@ -5,6 +5,7 @@ import com.sdl.eazybank.exceptions.BadRequestException;
 import java.security.Principal;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 import com.sdl.eazybank.filter.*;
 import org.slf4j.Logger;
@@ -26,7 +27,7 @@ import org.springframework.web.cors.CorsConfiguration;
 @Configuration
 public class ProjectSecurityConfig {
 
-    private Logger logger = LoggerFactory.getLogger(ProjectSecurityConfig.class);
+    private final Logger logger = LoggerFactory.getLogger(ProjectSecurityConfig.class);
 
     @Bean
     public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity httpSecurity)
@@ -40,7 +41,7 @@ public class ProjectSecurityConfig {
                     configuration.setAllowCredentials(true);
                     configuration.setAllowedHeaders(Collections.singletonList("*"));
                     configuration.setMaxAge(3600L);
-                    configuration.setExposedHeaders(Arrays.asList("Authorization"));
+                    configuration.setExposedHeaders(List.of("Authorization"));
                     try {
                         //Todo if the request is not understood by the system 3 times the disable the user completely
                     } catch (Exception e) {

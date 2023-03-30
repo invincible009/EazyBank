@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CustomerLoginController extends PublicBaseApiController {
 
-  private Logger logger = LoggerFactory.getLogger(CustomerLoginController.class);
+  private final  Logger logger = LoggerFactory.getLogger(CustomerLoginController.class);
 
   private final CustomerService customerService;
 
