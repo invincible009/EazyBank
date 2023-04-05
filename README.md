@@ -1,5 +1,5 @@
 # EazyBank 
-> Short Project Blurb
+> Short Project Blurb.
 ---
 ### Table Of Contents
 You're sections headers will be used to reference location of destination.
