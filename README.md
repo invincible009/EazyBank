@@ -66,4 +66,4 @@ IN THE SOFTWARE.
 ---
 ## Author Info
   - Twitter - [Enterprise dev](https://twitter.com/duver_sdl)
-  - LinkedIn - [Gabriel Mbaiorga](https://wwww.linkedin.com/in/gabriel-mbaiorga)
+  - LinkedIn - [Gabriel Mbaiorga](https://wwww.linkedin.com/in/gabriel-mbaiorga).
