@@ -13,7 +13,7 @@ You're sections headers will be used to reference location of destination.
 ## Description
 Money can possess different forms, at easy bank, money is converted to a form that makes it easy for it to be used on the internet and in person
 like creating a voucher out of the money. Vouchers created at eazybank can be used by customers to make purchase on platforms on the internet, and
-Vouchers can also be collected by money agents for cash
+Vouchers can also be collected by money agents for cash.
 
 ### Technologies 
 - Java 11
