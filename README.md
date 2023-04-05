@@ -61,7 +61,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OU
 IN THE SOFTWARE.
   
   
-[Back To The Top](#project-name)
+[Back To The Top](#project-name).
   
 ---
 ## Author Info
