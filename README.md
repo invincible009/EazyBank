@@ -35,7 +35,7 @@ Log onto the EazyBank app and create an account.
 
 
 ```html
-  <p> / </p>
+  <p> / </p>.
 ```
 [Back To The Top](#project-name)..
 
