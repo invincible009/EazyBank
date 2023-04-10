@@ -41,7 +41,7 @@ Log onto the EazyBank app and create an account.
 ---
 
 ## References
-[Back To The Top](#project-name)
+[Back To The Top](#project-name).
 
 ---
 ## License
