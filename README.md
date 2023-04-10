@@ -6,7 +6,7 @@ You're sections headers will be used to reference location of destination.
 - [Description](#description)
 - [How To Use](#how-to-use)
 - [References](#refrences)
-- [License](#license)
+- [License](#license).
 - [Author Info](#author-info).
 ---
 ## Description
