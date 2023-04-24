@@ -7,7 +7,7 @@ You're sections headers will be used to reference location of destination.
 - [How To Use](#how-to-use).
 - [References](#refrences).
 - [License](#license).
-- [Author Info](#author-info)..
+- [Author Info](#author-info)...
 ---
 ## Description
 Money can possess different forms, at easy bank, money is converted to a form that makes it easy for it to be used on the internet and in person
