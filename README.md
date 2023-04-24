@@ -17,7 +17,7 @@ Vouchers can also be collected by money agents for cash.
 ### Technologies 
 - Java 11
 - Postgres sql.
-- Spring Security..
+- Spring Security...
 
 ---
 ## How To Use
